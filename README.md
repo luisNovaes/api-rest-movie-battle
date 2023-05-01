@@ -1,5 +1,5 @@
 # Movie Battle
-## _API Rest para teste técnico Ada - Luis Magno da Silva Novaes_
+## _API RESTFULL com Spring, Spring WEB MVC, Spring Security, Spring Data, Spring Cloud - Luis Magno da Silva Novaes_
 
 ## Filmes
 
