@@ -1,0 +1,53 @@
+2023-05-01 12:03:41,623 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-05-01 12:04:23,349 [Worker-5: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: br.com.luisnovaes:movie-battle:1.0 @ C:\Users\35196\Desktop\STS\movies-battle-master\pom.xml.
+2023-05-01 12:04:26,328 [Worker-5: Importing Maven projects] INFO  o.e.m.c.i.embedder.EclipseLogger - Code generation is skipped in delta-build because source-json was not modified.
+2023-05-01 12:04:26,705 [Worker-5: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /movie-battle/src/main/java
+2023-05-01 12:04:26,725 [Worker-5: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /movie-battle/target/generated-sources/src/main/java
+2023-05-01 12:04:26,727 [Worker-5: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /movie-battle/src/main/resources
+2023-05-01 12:04:26,728 [Worker-5: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /movie-battle/src/main/resources
+2023-05-01 12:04:26,731 [Worker-5: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /movie-battle/src/test/java
+2023-05-01 12:04:27,491 [Worker-5: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 6 sec
+2023-05-01 12:04:27,776 [Worker-4: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2023-05-01 12:04:28,858 [Worker-4: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: br.com.luisnovaes:movie-battle:1.0 @ C:\Users\35196\Desktop\STS\movies-battle-master\pom.xml.
+2023-05-01 12:04:30,683 [Worker-4: Updating Maven Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Code generation is skipped in delta-build because source-json was not modified.
+2023-05-01 12:04:31,032 [Worker-4: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /movie-battle/src/main/java
+2023-05-01 12:04:31,033 [Worker-4: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /movie-battle/target/generated-sources/src/main/java
+2023-05-01 12:04:31,033 [Worker-4: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /movie-battle/src/main/resources
+2023-05-01 12:04:31,034 [Worker-4: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /movie-battle/src/main/resources
+2023-05-01 12:04:31,035 [Worker-4: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /movie-battle/src/test/java
+2023-05-01 12:04:32,120 [Worker-4: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0,00 sec, refresh facades takes 2,00 sec, update config takes 1,00 sec 
+2023-05-01 12:04:38,214 [Worker-11: Building] INFO  o.o.codegen.DefaultGenerator - Generating with dryRun=false
+2023-05-01 12:04:38,222 [Worker-11: Building] INFO  o.o.c.ignore.CodegenIgnoreProcessor - No .openapi-generator-ignore file found.
+2023-05-01 12:04:38,222 [Worker-11: Building] INFO  o.o.codegen.DefaultGenerator - OpenAPI Generator: spring (server)
+2023-05-01 12:04:38,222 [Worker-11: Building] INFO  o.o.codegen.DefaultGenerator - Generator 'spring' is considered stable.
+2023-05-01 12:04:38,301 [Worker-11: Building] INFO  o.o.codegen.languages.SpringCodegen - ----------------------------------
+2023-05-01 12:04:38,301 [Worker-11: Building] INFO  o.o.c.languages.AbstractJavaCodegen - Environment variable JAVA_POST_PROCESS_FILE not defined so the Java code may not be properly formatted. To define it, try 'export JAVA_POST_PROCESS_FILE="/usr/local/bin/clang-format -i"' (Linux/Mac)
+2023-05-01 12:04:38,301 [Worker-11: Building] INFO  o.o.c.languages.AbstractJavaCodegen - NOTE: To enable file post-processing, 'enablePostProcessFile' must be set to `true` (--enable-post-process-file for CLI).
+2023-05-01 12:04:38,301 [Worker-11: Building] INFO  o.o.c.languages.AbstractJavaCodegen - Invoker Package Name, originally not set, is now derived from api package name: br.com.letscode.moviebattle.openapi
+2023-05-01 12:04:38,308 [Worker-11: Building] INFO  o.o.c.languages.AbstractJavaCodegen - Processing operation iniciarNovaRodada
+2023-05-01 12:04:38,308 [Worker-11: Building] INFO  o.o.c.languages.AbstractJavaCodegen - Processing operation escolherOpcao
+2023-05-01 12:04:38,308 [Worker-11: Building] INFO  o.o.c.languages.AbstractJavaCodegen - Processing operation finalizar
+2023-05-01 12:04:38,308 [Worker-11: Building] INFO  o.o.c.languages.AbstractJavaCodegen - Processing operation getRanking
+2023-05-01 12:04:38,308 [Worker-11: Building] INFO  o.o.c.languages.AbstractJavaCodegen - Processing operation iniciarJogo
+2023-05-01 12:04:38,506 [Worker-11: Building] INFO  o.o.codegen.DefaultGenerator - Model Ranking not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+2023-05-01 12:04:38,563 [Worker-11: Building] INFO  o.o.codegen.TemplateManager - writing file C:\Users\35196\Desktop\STS\movies-battle-master\target\generated-sources\src\main\java\br\com\letscode\moviebattle\openapi\model\Mensagem.java
+2023-05-01 12:04:38,590 [Worker-11: Building] INFO  o.o.codegen.TemplateManager - writing file C:\Users\35196\Desktop\STS\movies-battle-master\target\generated-sources\src\main\java\br\com\letscode\moviebattle\openapi\model\MovieOption.java
+2023-05-01 12:04:38,619 [Worker-11: Building] INFO  o.o.codegen.TemplateManager - writing file C:\Users\35196\Desktop\STS\movies-battle-master\target\generated-sources\src\main\java\br\com\letscode\moviebattle\openapi\model\PosicaoRanking.java
+2023-05-01 12:04:38,644 [Worker-11: Building] INFO  o.o.codegen.TemplateManager - writing file C:\Users\35196\Desktop\STS\movies-battle-master\target\generated-sources\src\main\java\br\com\letscode\moviebattle\openapi\model\RequestNovoJogo.java
+2023-05-01 12:04:38,672 [Worker-11: Building] INFO  o.o.codegen.TemplateManager - writing file C:\Users\35196\Desktop\STS\movies-battle-master\target\generated-sources\src\main\java\br\com\letscode\moviebattle\openapi\model\Rodada.java
+2023-05-01 12:04:38,697 [Worker-11: Building] INFO  o.o.codegen.TemplateManager - writing file C:\Users\35196\Desktop\STS\movies-battle-master\target\generated-sources\src\main\java\br\com\letscode\moviebattle\openapi\model\User.java
+2023-05-01 12:04:38,783 [Worker-11: Building] INFO  o.o.codegen.TemplateManager - writing file C:\Users\35196\Desktop\STS\movies-battle-master\target\generated-sources\src\main\java\br\com\letscode\moviebattle\openapi\api\JogoApi.java
+2023-05-01 12:04:38,902 [Worker-11: Building] INFO  o.o.codegen.TemplateManager - Skipped C:\Users\35196\Desktop\STS\movies-battle-master\target\generated-sources\pom.xml (Skipped by supportingFiles options supplied by user.)
+2023-05-01 12:04:38,903 [Worker-11: Building] INFO  o.o.codegen.TemplateManager - Skipped C:\Users\35196\Desktop\STS\movies-battle-master\target\generated-sources\README.md (Skipped by supportingFiles options supplied by user.)
+2023-05-01 12:04:38,905 [Worker-11: Building] INFO  o.o.codegen.TemplateManager - writing file C:\Users\35196\Desktop\STS\movies-battle-master\target\generated-sources\src\main\java\br\com\letscode\moviebattle\openapi\api\ApiUtil.java
+2023-05-01 12:04:38,906 [Worker-11: Building] INFO  o.o.codegen.TemplateManager - Skipped C:\Users\35196\Desktop\STS\movies-battle-master\target\generated-sources\.openapi-generator-ignore (Skipped by supportingFiles options supplied by user.)
+2023-05-01 12:04:38,906 [Worker-11: Building] INFO  o.o.codegen.TemplateManager - writing file C:\Users\35196\Desktop\STS\movies-battle-master\target\generated-sources\.openapi-generator\VERSION
+2023-05-01 12:04:38,914 [Worker-11: Building] INFO  o.o.codegen.TemplateManager - writing file C:\Users\35196\Desktop\STS\movies-battle-master\target\generated-sources\.openapi-generator\FILES
+2023-05-01 12:04:38,981 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-05-01 12:04:38,981 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-05-01 12:04:38,990 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2023-05-01 12:04:39,037 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2023-05-01 12:04:39,080 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-05-01 12:04:39,080 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-05-01 12:04:39,080 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\35196\Desktop\STS\movies-battle-master\src\test\resources
+2023-05-01 12:48:49,034 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

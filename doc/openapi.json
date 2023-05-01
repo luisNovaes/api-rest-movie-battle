@@ -1,0 +1,406 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "movie-battle",
+    "version": "1.0.0",
+    "description": "API REST criada para teste técnico da Ada.",
+    "contact": {
+      "name": "Luis Magno da Silva Novaes",
+      "url": "https://www.linkedin.com/in/luis-silva-2a4a311b8/",
+      "email": "luismagnovaes@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000/movie-battle/v1",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/jogo/iniciar-rodada": {
+      "summary": "Recurso responsável por iniciar uma nova rodada.",
+      "description": "Recurso responsável por iniciar uma nova rodada.",
+      "get": {
+        "tags": [
+          "jogo"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/NovaRodadaResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ],
+        "operationId": "iniciarNovaRodada",
+        "summary": "Inicia uma nova rodada",
+        "description": "Inicia uma nova rodada"
+      }
+    },
+    "/jogo/escolher-opcao": {
+      "summary": "Recurso responsável por escolher uma opção dos filmes",
+      "description": "Recurso responsável por iniciar uma nova rodada.",
+      "get": {
+        "tags": [
+          "jogo"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/MensagemResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ],
+        "operationId": "escolherOpcao",
+        "summary": "Recurso responsável por iniciar uma nova rodada.",
+        "description": "Recurso responsável por iniciar uma nova rodada."
+      },
+      "parameters": [
+        {
+          "name": "opcaoFilme",
+          "description": "Representa a opção de filmes.",
+          "schema": {
+            "type": "integer"
+          },
+          "in": "query",
+          "required": true
+        }
+      ]
+    },
+    "/jogo/encerrar": {
+      "summary": "Recurso responsável por encerrar um jogo",
+      "get": {
+        "tags": [
+          "jogo"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/MensagemResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ],
+        "operationId": "finalizar",
+        "summary": "Encerra o jogo e informa o score atual",
+        "description": "Finaliza a partida."
+      }
+    },
+    "/jogo/ranking": {
+      "summary": "Recurso responsável por rankear os melhores jogadores.",
+      "description": "Recurso responsável por rankear os melhores jogadores.",
+      "get": {
+        "tags": [
+          "jogo"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ResponseRanking"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ],
+        "operationId": "getRanking",
+        "summary": "Recurso responsável por rankear os melhores jogadores.",
+        "description": "Recurso responsável por rankear os melhores jogadores."
+      }
+    },
+    "/jogo/iniciar": {
+      "summary": "Recurso responsável por iniciar um novo jogo",
+      "post": {
+        "tags": [
+          "jogo"
+        ],
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/MensagemResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ],
+        "operationId": "iniciarJogo",
+        "summary": "Recurso responsável por criar um novo jogo."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "description": "Objeto que representa um usuário no jogo.",
+        "required": [
+          "senha",
+          "usuario",
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "nome": {
+            "description": "Nome do usuário.",
+            "type": "string"
+          },
+          "senha": {
+            "description": "Representa a senha no jogo.",
+            "type": "string"
+          },
+          "usuario": {
+            "description": "Nome de usuário no jogo.",
+            "type": "string"
+          }
+        },
+        "example": {
+          "nome": "Luis Magno da Silva Novaes",
+          "usuario": "luisnovaes",
+          "senha": "Spring2023"
+        }
+      },
+      "Rodada": {
+        "title": "Root Type for Rodada",
+        "description": "Objeto que representa uma rodada no jogo.",
+        "type": "object",
+        "properties": {
+          "message": {
+            "description": "Mensagem do sistema a cada rodada.",
+            "type": "string"
+          },
+          "movies": {
+            "description": "Filmes que representam as opções nesta rodada.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MovieOption"
+            }
+          }
+        },
+        "example": {
+          "message": "Luis deve escolher entre os dois filmes, qual deles você acha que tem a maior pontuação? Filme 1 ou Filme 2?",
+          "movies": [
+            {
+              "title": "O Pesadelo 3",
+              "posicao": 1,
+              "plot": "Um filme que vai te deixar acordado"
+            },
+            {
+              "title": "Refém de uma vida",
+              "posicao": 2,
+              "plot": "Um filme que vai te deixar refém da vida inteira"
+            }
+          ]
+        }
+      },
+      "MovieOption": {
+        "title": "Root Type for MovieOption",
+        "description": "Objeto que representa uma opção de filmes para escolha em cada rodada. ",
+        "required": [
+          "opcao"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "description": "Título do filme.",
+            "type": "string"
+          },
+          "opcao": {
+            "description": "Opção do filme.",
+            "type": "integer"
+          },
+          "plot": {
+            "description": "Resumo sobre o filme.",
+            "type": "string"
+          }
+        },
+        "example": {
+          "title": "O Pesadelo 3",
+          "opcao": 1,
+          "plot": "Você vai querer acordar o quanto antes!"
+        }
+      },
+      "Mensagem": {
+        "title": "Root Type for EscolherOpcaoResponse",
+        "description": "",
+        "type": "object",
+        "properties": {
+          "msg": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "msg": "Mensagem sistema"
+        }
+      },
+      "Ranking": {
+        "title": "Root Type for Ranking",
+        "description": "",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PosicaoRanking"
+        },
+        "example": [
+          {
+            "nome": "Luis",
+            "pontuacao": 900,
+            "posicao": 1
+          },
+          {
+            "nome": "Ricardo",
+            "pontuacao": 800,
+            "posicao": 2
+          },
+          {
+            "nome": "David",
+            "pontuacao": 600,
+            "posicao": 3
+          },
+          {
+            "nome": "Elias",
+            "pontuacao": 500,
+            "posicao": 4
+          },
+          {
+            "nome": "Francisco",
+            "pontuacao": 400,
+            "posicao": 5
+          },
+          {
+            "nome": "Helena",
+            "pontuacao": 300,
+            "posicao": 6
+          },
+          {
+            "nome": "Fabi",
+            "pontuacao": 200,
+            "posicao": 7
+          },
+          {
+            "nome": "Gabriel",
+            "pontuacao": 100,
+            "posicao": 8
+          },
+          {
+            "nome": "Carlos",
+            "pontuacao": 50,
+            "posicao": 9
+          },
+          {
+            "nome": "Gabriel",
+            "pontuacao": 0,
+            "posicao": 10
+          }
+        ]
+      },
+      "PosicaoRanking": {
+        "title": "Root Type for PosicaoRanking",
+        "description": "",
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string"
+          },
+          "pontuacao": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "posicao": {
+            "type": "integer"
+          }
+        },
+        "example": {
+          "nome": "Gabriel",
+          "pontuacao": 100,
+          "posicao": 2
+        }
+      },
+      "RequestNovoJogo": {
+        "title": "Root Type for RequestNovoJogo",
+        "description": "",
+        "type": "object",
+        "properties": {
+          "usuario": {
+            "description": "Usuário que irá iniciar uma nova partida.",
+            "type": "string"
+          }
+        },
+        "example": {
+          "usuario": "luisnovaes"
+        }
+      }
+    },
+    "responses": {
+      "NovaRodadaResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Rodada"
+            }
+          }
+        },
+        "description": "Objeto que representa uma nova rodada."
+      },
+      "MensagemResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Mensagem"
+            }
+          }
+        },
+        "description": "Resposta para o recurso escolher uma opção."
+      },
+      "ResponseRanking": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Ranking"
+            }
+          }
+        },
+        "description": "Array de posições dos melhores jogadores."
+      },
+      "ErrorResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Mensagem"
+            }
+          }
+        },
+        "description": ""
+      }
+    },
+    "securitySchemes": {
+      "BasicAuth": {
+        "scheme": "basic",
+        "type": "http"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+version: '3'
+services:
+  todo-list:
+    container_name: todolist
+    image: luisnovaes/movie-battle:1.0
+    ports:
+      - 5000:5000
+    expose:
+      - 5000
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    container_name: "swagger-ui"
+    ports:
+      - 8080:8080
+    volumes:
+      - ./doc/openapi.json:/openapi.json
+    environment:
+      SWAGGER_JSON: /openapi.json

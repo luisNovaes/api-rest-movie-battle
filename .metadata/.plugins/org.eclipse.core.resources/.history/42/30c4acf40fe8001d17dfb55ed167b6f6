@@ -1,0 +1,62 @@
+package br.com.letscode.moviebattle.controllers.mappers;
+
+import br.com.letscode.moviebattle.entities.Usuario;
+import br.com.letscode.moviebattle.openapi.model.PosicaoRanking;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.processing.Generated;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2023-04-30T21:49:01+0100",
+    comments = "version: 1.4.2.Final, compiler: Eclipse JDT (IDE) 3.33.0.v20230218-1114, environment: Java 17.0.6 (Eclipse Adoptium)"
+)
+public class RankingMapperImpl implements RankingMapper {
+
+    @Override
+    public PosicaoRanking map(Usuario usuario) {
+        if ( usuario == null ) {
+            return null;
+        }
+
+        PosicaoRanking posicaoRanking = new PosicaoRanking();
+
+        if ( usuario.getMelhorScore() != null ) {
+            posicaoRanking.setPontuacao( usuario.getMelhorScore().longValue() );
+        }
+        posicaoRanking.setNome( usuario.getNome() );
+        posicaoRanking.setPosicao( usuario.getPosicao() );
+
+        return posicaoRanking;
+    }
+
+    @Override
+    public Usuario map(PosicaoRanking posicaoRanking) {
+        if ( posicaoRanking == null ) {
+            return null;
+        }
+
+        Usuario usuario = new Usuario();
+
+        usuario.setNome( posicaoRanking.getNome() );
+        if ( posicaoRanking.getPosicao() != null ) {
+            usuario.setPosicao( posicaoRanking.getPosicao() );
+        }
+
+        return usuario;
+    }
+
+    @Override
+    public List<PosicaoRanking> map(List<Usuario> usuarios) {
+        if ( usuarios == null ) {
+            return null;
+        }
+
+        List<PosicaoRanking> list = new ArrayList<PosicaoRanking>( usuarios.size() );
+        for ( Usuario usuario : usuarios ) {
+            list.add( map( usuario ) );
+        }
+
+        return list;
+    }
+}
