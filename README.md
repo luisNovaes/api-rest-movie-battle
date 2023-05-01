@@ -59,14 +59,3 @@ A seguir segue a lista de usuários criados que serão necessários para o jogo,
 | Elias | usuario8 | 123
 | Rafaela | usuario9 | 123
 | Henrique | usuario10 | 123
-
-## YouTube
-
-Fiz um pequeno vídeo de explicação sobre o projeto:
-
-```sh
-
-```
-
-Muito obrigado pela oportunidade.
-
